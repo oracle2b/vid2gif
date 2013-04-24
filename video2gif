@@ -190,13 +190,20 @@ class MiVentana(gtk.Dialog):
 
    def on_button61_clicked(self,widget):
       filename = self.entry12.get_text()
+      fileoutput = os.path.split(filename)[1]+'.tmp.avi'
       init = float(self.hscale22.get_value())
       fin = float(self.hscale32.get_value()) - init
       width = int(self.entry42.get_text())*int(self.entry46.get_text())/100
       height = int(self.entry44.get_text())*int(self.entry46.get_text())/100
-      command ='mplayer -ao null -loop 0 -ss %s -endpos %s -vf scale=%s:%s "%s"'%(init, fin, width, height, filename)
-      print(command)
+      #command ='mplayer -ao null -loop 0 -ss %s -endpos %s -vf scale=%s:%s "%s"'%(init, fin, width, height, filename)
+      command ='ffmpeg -y -b 2000k -an -ss %s -t %s -r %s -i "%s" "/tmp/%s"'%(init, fin, filename, fileoutput)
       ejecuta(command)
+      print(command)
+      command ='mplayer -ao null -loop 0 -vf scale=%s:%s "/tmp/%s"'%(width, height, fileoutput)
+      ejecuta(command)
+      command ='rm /tmp/%s'%(fileoutput)
+      ejecuta(command)
+
 
 
 if __name__ == '__main__':
