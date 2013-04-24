@@ -54,6 +54,7 @@ class MiVentana(gtk.Dialog):
    def __init__(self):
       gtk.Dialog.__init__(self,'Video 2 Gif',None,gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,(gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
       self.set_title('Video 2 Gif')
+      self.set_icon_from_file('vid2gif.png')
       vbox = gtk.VBox(spacing = 5)
       vbox.set_border_width(5)
       self.get_content_area().add(vbox)
