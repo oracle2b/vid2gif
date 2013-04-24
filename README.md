@@ -7,4 +7,4 @@ Requires: python2.x, mplayer, ffmpeg, mogrify, gifsicle, calc, du and coreutils
 
 
 
-TODO: improve the preview's accuracy by piping ffmpeg into mplayer instead of using mplayer. Add the maxsize functionality.
+TODO: Add the maxsize functionality.
