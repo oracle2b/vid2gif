@@ -3,6 +3,7 @@
 #   video2gif - Convert a video clip into an animated GIF
 #
 #   Copyright (C) 2007  Douglas A. Augusto (daaugusto@gmail.com)
+#   Minor modifications by Damien Smeets (@gmail.com)
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
