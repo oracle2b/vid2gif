@@ -18,6 +18,8 @@ for d in $DEP; do
       fi
 done
 
+sudo rm -rf /usr/share/vid2gif
+sudo rm -f /usr/bin/video2gif
 sudo mkdir /usr/share/vid2gif
 sudo cp vid* /usr/share/vid2gif 
 sudo ln -s /usr/share/vid2gif/video2gif /usr/bin/video2gif
