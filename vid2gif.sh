@@ -181,7 +181,7 @@ do
 
    # ----------------------------------------------------------------------
    # mplayer -ss is inaccurate
-   CMD_FFMPEG='ffmpeg -y -b 2000k -an -ss $START -t $DURATION -i "$FILE" -r $FPS $TMPDIR/ffmpeg.avi >> $LOG 2>&1'
+   CMD_FFMPEG='ffmpeg -y -b 2000k -an -ss $START -t $DURATION -i "$FILE" -r $FPS -c:v libx264 -preset slow -crf 22  $TMPDIR/ffmpeg.avi >> $LOG 2>&1'
    echo $CMD_FFMPEG >> $LOG
    echo; echo "Running ffmpeg...";
    if ! eval $CMD_FFMPEG; then echo "An error occurred in ffmpeg, aborting..."; exit 1; fi
@@ -211,13 +211,13 @@ do
    # ----------------------------------------------------------------------
 
    # check the final size (in KB)
-   SIZE=$(echo 'round(`du -b "$OUTPUT" | cut -f 1`/1024)'|calc -p)
+   SIZE=$(echo "round(`du -b "$OUTPUT" | cut -f 1`/1024)"|calc -p)
 
    if [ $MAXSIZE -eq 0 -o $SIZE -le $MAXSIZE -o $FPS -eq 1 ]; then
       # delete only if DEBUG mode isn't enabled
       if [ -z "$DEBUG" ]; then rm -f $LOG; rmdir $TMPDIR; fi
 
-      echo; echo 'Done! Saved GIF as "$OUTPUT" (FPS=$FPS, final size=${SIZE}KB)'
+      echo; echo "Done! Saved GIF as "$OUTPUT" (FPS=$FPS, final size=${SIZE}KB)"
       exit 0;
    else
       # calculating the next FPS guess
