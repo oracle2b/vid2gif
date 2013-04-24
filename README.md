@@ -7,4 +7,4 @@ Requires: python2.x, mplayer, ffmpeg, mogrify, gifsicle, calc, du and coreutils
 
 
 
-TODO: Add the maxsize functionality.
+TODO: Improve the quality on longer GIFs.
