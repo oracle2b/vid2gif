@@ -110,7 +110,7 @@ class MiVentana(gtk.Dialog):
       self.spinbutton52 = gtk.SpinButton()
       self.spinbutton52.set_digits(0)
       self.spinbutton52.set_range(1,30)
-      self.spinbutton52.set_adjustment(gtk.Adjustment(value=1, lower=1, upper=30, step_incr=1, page_incr=1, page_size=0))
+      self.spinbutton52.set_adjustment(gtk.Adjustment(value=10, lower=1, upper=30, step_incr=1, page_incr=1, page_size=0))
       table.attach(self.spinbutton52,3,4,5,6,xoptions=gtk.EXPAND|gtk.FILL, yoptions=gtk.EXPAND|gtk.FILL, xpadding=5, ypadding=5)
       button61 = gtk.Button('Preview')
       table.attach(button61, 3, 4, 7, 8, xoptions=gtk.EXPAND|gtk.FILL, yoptions=gtk.EXPAND|gtk.FILL, xpadding=5, ypadding=5)
