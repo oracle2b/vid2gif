@@ -3,7 +3,7 @@ vid2gif
 
 An improved version of Lorenzo Carbonell's python script for converting video chucks to GIFs
 
-Requires: python2.x, mplayer, ffmpeg, mogrify, gifsicle, calc, du and coreutils
+Requires: python2.x, mplayer, ffmpeg, mogrify (imagemagick), gifsicle, (ap)calc, du and coreutils
 
 
 
