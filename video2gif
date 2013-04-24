@@ -215,7 +215,10 @@ if __name__ == '__main__':
       if fin != str(int(window.length)-1):
          commando += ' -endpos %s'%(fin-inicio)
       commando += ' -ao null -vf scale=%s:%s -vo gif89a:fps=%s:output=%s -nosound'%(width, height, fps, fileoutput)
-      print(commando)
-      ejecuta(commando)
+      #print(commando)
+      #ejecuta(commando)
+      command = './vid2gif.sh -t %s -s %s -fps %s -size %sx%s "%s" -o %s'%(fin-inicio, inicio, fps, width, height, filename, fileoutput)
+      print(command)
+      ejecuta(command)
    exit(0)
 
