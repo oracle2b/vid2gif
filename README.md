@@ -7,4 +7,4 @@ Requires: python2.x, mplayer, ffmpeg, mogrify, gifsicle, calc, du and coreutils
 
 
 
-TODO: Improve the quality on longer GIFs.
+Improvement idea: add the possibility to embed subtitles.
